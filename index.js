@@ -52,16 +52,16 @@
       }
 
     } else if (e.target && e.target.id == 'slowButton') {
-      let goLight = document.getElementById('goLight');
-      if (goLightOn) {
-        goLightOn = false;
+      let slowLight = document.getElementById('slowLight');
+      if (slowLightOn) {
+        slowLightOn = false;
         console.log(event.target.textContent, "bulb off");
-        return goLight.classList.remove("go");
+        return slowLight.classList.remove("slow");
 
       } else {
-        goLightOn = true;
+        slowLightOn = true;
         console.log(event.target.textContent, "bulb on");
-        return goLight.classList.add("go");
+        return slowLight.classList.add("slow");
       }
 
     } else if (e.target && e.target.id == 'goButton') {
