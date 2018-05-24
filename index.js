@@ -5,6 +5,11 @@
   let stopButton = document.getElementById('stopButton');
   let slowButton = document.getElementById('slowButton');
   let goButton = document.getElementById('goButton');
+
+  let stopLight = document.getElementById('stopLight')
+  let slowLight = document.getElementById('slowLight');
+  let goLight = document.getElementById('goLight');
+
   let stopLightOn = false;
   let slowLightOn = false;
   let goLightOn = false;
@@ -37,48 +42,19 @@
   });
 
   document.getElementById('controls').addEventListener('click', function (e) {
-
-    if (e.target && e.target.id == 'stopButton') {
-      let stopLight = document.getElementById('stopLight');
-      if (stopLightOn) {
-        stopLightOn = false;
-        console.log(event.target.textContent, "bulb off");
-        return stopLight.classList.remove("stop");
-
-      } else {
-        stopLightOn = true;
-        console.log(event.target.textContent, "bulb on");
-        return stopLight.classList.add("stop");
-      }
-
-    } else if (e.target && e.target.id == 'slowButton') {
-      let slowLight = document.getElementById('slowLight');
-      if (slowLightOn) {
-        slowLightOn = false;
-        console.log(event.target.textContent, "bulb off");
-        return slowLight.classList.remove("slow");
-
-      } else {
-        slowLightOn = true;
-        console.log(event.target.textContent, "bulb on");
-        return slowLight.classList.add("slow");
-      }
-
-    } else if (e.target && e.target.id == 'goButton') {
-
-      let goLight = document.getElementById('goLight');
-      if (goLightOn) {
-        goLightOn = false;
-        console.log(event.target.textContent, "bulb off");
-        return goLight.classList.remove("go");
-
-      } else {
-        goLightOn = true;
-        console.log(event.target.textContent, "bulb on");
-        return goLight.classList.add("go");
-      }
+    if(e.target.light = "false"){
+      e.target.light = "true";
+      console.log(event.target.textContent, "bulb on");
+    } else {
+      e.target.light = "false";
+      console.log(event.target.textContent, "bulb off");
+    }
+    if(e.target.id == 'stopButton') {
+      stopLight.classList.toggle('stop');
+    } else if (e.target.id == 'slowButton') {
+      slowLight.classList.toggle('slow');
+    } else if (e.target.id == 'goButton') {
+      goLight.classList.toggle('go');
     }
   });
-
-
 })();
